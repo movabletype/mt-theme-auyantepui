@@ -1,0 +1,15 @@
+<mt:If name="userpic_type" eq="profile">
+<div class="userpic">
+  <img alt="<$mt:AuthorDisplayName encode_html="1"$>" src="<mt:If tag="AuthorUserpicURL"><$mt:AuthorUserpicURL square="1" width="$userpic_size"$><mt:Else><$mt:SupportDirectoryURL$>theme_static/<$mt:BlogThemeID$>/img/default-userpic.png</mt:If>">
+</div>
+<mt:Else name="userpic_type" eq="talk">
+  <mt:Authors need_entry="0" display_name="$user">
+<div class="userpic">
+  <img alt="<$mt:Var name="user"$>" src="<mt:If tag="AuthorUserpicURL"><$mt:AuthorUserpicURL square="1" width="$userpic_size"$><mt:Else><$mt:SupportDirectoryURL$>theme_static/<$mt:BlogThemeID$>/img/default-userpic.png</mt:If>">
+</div>
+  </mt:Authors>
+<mt:Else>
+<span class="userpic">
+  <img alt="<$mt:AuthorDisplayName encode_html="1"$>" src="<mt:If tag="AuthorUserpicURL"><$mt:AuthorUserpicURL square="1" width="$userpic_size"$><mt:Else><$mt:SupportDirectoryURL$>theme_static/<$mt:BlogThemeID$>/img/default-userpic.png</mt:If>">
+</span>
+</mt:If>

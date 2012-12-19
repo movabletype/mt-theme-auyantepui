@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+@import "function";
+@import "variable";
+@import "grid";
+@import "component";
+
+[role="navigation"] {
+  ul {
+    float: left;
+  }
+
+  .widget-search {
+    display: block;
+    float: right;
+    margin: 0  $harf-indent 0 0;
+  }
+}
+
+.content {
+  margin: 0 auto;
+}
+
+[role="main"] {
+  float: left;
+  width: (($colspan14) - ($gap + $colspan03 + $gap));
+}
+
+.entry {
+  position: relative;
+  padding-left: ($colspan02 - $gut);
+
+  h2 {
+
+    + footer {
+
+      .userpic {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: ($colspan01 + $gut);
+        height: ($colspan01 + $gut);
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .social-buttons {
+    display: block;
+    margin: 0 0 0.62em;
+
+    ul {
+      margin: 0;
+    }
+  }
+
+  .profile {
+    margin-left: -($colspan02 - $gut);
+  }
+}
+
+.related {
+  float: right;
+  width: ($gap + $colspan03);
+}
+
+.profile {
+  ul {
+    position: absolute;
+    top: 0;
+    right: $indent;
+  }
+}
+
+.pagination {
+  padding-left: ($colspan02 - $gut);
+}
+
+[role="contentinfo"] {
+  .widgets {
+    float: left;
+    width: 50%;
+  }
+}

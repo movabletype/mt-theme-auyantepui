@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="<$mt:BlogLanguage$>">
+  <head>
+    <meta charset="<$mt:PublishCharset$>">
+    <meta name="description" content="<$mt:PageExcerpt encode_html="1"$>">
+    <$mt:Include module="<__trans phrase="HTML Head">"$>
+    <link rel="canonical" href="<$mt:PagePermalink encode_html="1"$>">
+    <title><$mt:PageTitle encode_html="1"$> - <$mt:BlogName encode_html="1"$></title>
+  </head>
+  <body class="individual">
+    <header role="banner">
+      <$mt:Include module="<__trans phrase="Navigation">"$>
+      <$mt:Include module="<__trans phrase="Banner Header">"$>
+    </header>
+    <div id="content" class="content">
+      <div role="main">
+        <article id="entry-<$mt:PageID$>" class="entry hentry">
+          <h2><$mt:PageTitle$></h2>
+          <div class="entry-content">
+            <$mt:PageBody$>
+            <$mt:PageMore$>
+          </div>
+          <footer>
+            <p><__trans phrase="Last Update">: <time datetime="<$mt:PageModifiedDate format_name="iso8601"$>"><$mt:PageModifiedDate format="%x %X"$></time></p>
+          </footer>
+        </article>
+      </div>
+      <div class="widgets related" role="complementary">
+        <$mt:WidgetSet name="<__trans phrase="Related Content">"$>
+      </div>
+    </div>
+    <aside class="social-buttons">
+      <$mt:Include module="<__trans phrase="Social Button">" url="" title=""$>
+    </aside>
+    <footer class="page-footer" role="contentinfo">
+      <div class="inner">
+        <div class="widgets">
+          <$mt:WidgetSet name="<__trans phrase="Footer Content 01">"$>
+        </div>
+        <div class="widgets">
+          <$mt:WidgetSet name="<__trans phrase="Footer Content 02">"$>
+        </div>
+      </div>
+      <$mt:Include module="<__trans phrase="Banner Footer">"$>
+    </footer>
+    <$mt:Include module="<__trans phrase="JavaScript Footer">"$>
+    <$mt:Include module="Google Analytics"$>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<$mt:Var name="entries_per_page" value="5"$>
+<mt:SetVarBlock name="search_link">
+    <$mt:CGIPath$><$mt:SearchScript$>?IncludeBlogs=<$mt:BlogID$>
+    &template_id=<$mt:BuildTemplateID$>
+    &limit=<$mt:Var name="entries_per_page"$>
+    <mt:If name="archive_template">
+    &archive_type=<$mt:ArchiveType$>
+        <mt:If name="datebased_archive">
+    &year=<$mt:ArchiveDate format='%Y'$>&month=<$mt:ArchiveDate format='%m'$>&day=<$mt:ArchiveDate format='%d'$>
+        </mt:If>
+        <mt:If name="category_archive">
+    &category=<$mt:CategoryID$>
+        </mt:If>
+        <mt:If name="author_archive">
+    &author=<$mt:AuthorID$>
+        </mt:If>
+    <mt:Else>
+    &archive_type=Index
+    </mt:If>
+    &page=
+</mt:SetVarBlock>
+<$mt:Var name="search_link" strip="" trim="1" encode_html="1" setvar="search_link"$>
+
+<!DOCTYPE html>
+<html lang="<$mt:BlogLanguage$>">
+  <head>
+    <meta charset="<$mt:PublishCharset$>">
+    <meta name="description" content="<$mt:ArchiveTitle encode_html="1"$>">
+    <title><$mt:ArchiveTitle encode_html="1"$> <__trans phrase="Archives"> - <$mt:BlogName encode_html="1"$></title>
+    <$mt:Include module="<__trans phrase="HTML Head">"$>
+  </head>
+  <body class="archive <$mt:ArchiveType lower_case="1"$>">
+    <header role="banner">
+      <$mt:Include module="<__trans phrase="Navigation">"$>
+      <$mt:Include module="<__trans phrase="Banner Header">"$>
+    </header>
+    <div id="content" class="content">
+      <div role="main">
+        <section>
+          <h2><$mt:ArchiveTitle$> <__trans phrase="Archives"></h2>
+<mt:If name="author_archive">
+<mt:SetVarBlock name="this_author"><$mt:ArchiveTitle$></mt:SetVarBlock>
+          <aside class="profile">
+            <$mt:Include module="<__trans phrase="Author Profile">"$>
+          </aside>
+</mt:If>
+<mt:Entries limit="$entries_per_page" search_results="1">
+  <mt:If name="author_archive">
+          <$mt:Include module="<__trans phrase="Entry Summary">" hide_userpic="1"$>
+  <mt:Else>
+          <$mt:Include module="<__trans phrase="Entry Summary">"$>
+  </mt:If>
+</mt:Entries>
+        </section>
+        <$mt:Include module="<__trans phrase="Pagination">"$>
+      </div>
+      <div class="widgets related" role="complementary">
+        <$mt:WidgetSet name="<__trans phrase="Related Content">"$>
+      </div>
+    </div>
+    <aside class="social-buttons">
+      <$mt:Include module="<__trans phrase="Social Button">" url="" title=""$>
+    </aside>
+    <footer class="page-footer" role="contentinfo">
+      <div class="inner">
+        <div class="widgets">
+          <$mt:WidgetSet name="<__trans phrase="Footer Content 01">"$>
+        </div>
+        <div class="widgets">
+          <$mt:WidgetSet name="<__trans phrase="Footer Content 02">"$>
+        </div>
+      </div>
+      <$mt:Include module="<__trans phrase="Banner Footer">"$>
+    </footer>
+    <$mt:Include module="<__trans phrase="JavaScript Footer">"$>
+    <$mt:Include module="Google Analytics"$>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="<$mt:BlogLanguage$>" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="<$mt:PublishCharset$>">
+    <meta name="description" content="<$mt:EntryExcerpt remove_html="1"$>">
+    <title><$mt:EntryTitle encode_html="1"$> - <$mt:BlogName encode_html="1"$></title>
+    <link rel="canonical" href="<$mt:EntryPermalink encode_html="1"$>">
+    <$mt:Include module="<__trans phrase="HTML Head">"$>
+    <mt:EntryPrevious><link rel="prev" href="<$mt:EntryPermalink encode_html="1"$>" title="<$mt:EntryTitle encode_html="1"$>"></mt:EntryPrevious>
+    <mt:EntryNext><link rel="next" href="<$mt:EntryPermalink encode_html="1"$>" title="<$mt:EntryTitle encode_html="1"$>"></mt:EntryNext>
+    <!-- Open Graph Protocol -->
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="<$mt:BlogLanguage setvar="blog_lang"$><mt:If name="blog_lang" eq="ja">ja_JP<mt:else><$mt:Var name="blog_lang"$></mt:If>">
+    <meta property="og:title" content="<$mt:EntryTitle encode_html="1"$>">
+    <meta property="og:url" content="<$mt:EntryPermalink encode_html="1"$>">
+    <meta property="og:description" content="<$mt:EntryExcerpt remove_html="1" encode_html="1"$>">
+    <meta property="og:site_name" content="<$mt:BlogName encode_html="1"$>">
+    <meta property="og:image" content="<mt:If tag="CFEntryThumbnail"><mt:CFEntryThumbnailAsset><$mt:AssetThumbnailURL width="320" square="1" encode_html="1"$></mt:CFEntryThumbnailAsset><mt:Else><mt:EntryAssets type="image" limit="1"><$mt:AssetThumbnailURL height="320" square="1" encode_html="1"$><mt:Else><mt:Assets type="image" tag="@SITE_ICON" limit="1"><$mt:AssetThumbnailURL height="320" square="1" encode_html="1"$><mt:Else><$mt:SupportDirectoryURL encode_html="1"$>theme_static/<$mt:BlogThemeID$>/img/siteicon-sample.png</mt:Assets></mt:EntryAssets></mt:If>">
+    <meta property="fb:app_id" content="<$mt:Include module="<__trans phrase="Facebook App ID"$>">">
+    <!-- Metadata -->
+    <meta itemprop="description" content="<$mt:EntryExcerpt remove_html="1"$>">
+    <link itemprop="url" href="<$mt:EntryPermalink encode_html="1"$>">
+    <link itemprop="image" href="<mt:If tag="CFEntryThumbnail"><mt:CFEntryThumbnailAsset><$mt:AssetThumbnailURL width="320" square="1" encode_html="1"$></mt:CFEntryThumbnailAsset><mt:Else><mt:EntryAssets type="image" limit="1"><$mt:AssetThumbnailURL height="320" square="1" encode_html="1"$><mt:Else><mt:Assets type="image" tag="@SITE_ICON" limit="1"><$mt:AssetThumbnailURL height="320" square="1" encode_html="1"$><mt:Else><$mt:SupportDirectoryURL encode_html="1"$>theme_static/<$mt:BlogThemeID$>/img/siteicon-sample.png</mt:Assets></mt:EntryAssets></mt:If>">
+  </head>
+  <body class="individual">
+    <header role="banner">
+      <$mt:Include module="<__trans phrase="Navigation">"$>
+      <$mt:Include module="<__trans phrase="Banner Header">"$>
+    </header>
+    <div id="content" class="content">
+      <div role="main">
+        <article id="entry-<$mt:EntryID$>" class="entry hentry">
+          <h2><a href="<$mt:EntryPermalink encode_html="1"$>"><$mt:EntryTitle$></a></h2>
+          <footer>
+            <p>Posted by <mt:unless name="hide_userpic"><$mt:Include module="<__trans phrase="Userpic">" userpic_size="136"$></mt:unless><$mt:EntryAuthorDisplayName$> on <time datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate format="%x %X"$></time><mt:IfArchiveTypeEnabled archive_type="Category"><mt:If tag="EntryCategories"> in <mt:EntryCategories glue=", "><a href="<$mt:CategoryArchiveLink$>" rel="tag"><$mt:CategoryLabel$></a></mt:EntryCategories></mt:If></mt:IfArchiveTypeEnabled></p>
+          </footer>
+          <aside class="social-buttons">
+            <$mt:Include module="<__trans phrase="Social Button">"$>
+          </aside>
+          <div class="entry-content">
+            <$mt:EntryBody$>
+            <$mt:EntryMore$>
+          </div>
+          <$mt:Include module="<__trans phrase="Zenback">"$>
+          <footer class="profile">
+            <mt:SetVarBlock name="this_author"><$mt:EntryAuthorDisplayName$></mt:SetVarBlock>
+            <$mt:Include module="<__trans phrase="Author Profile">"$>
+          </footer>
+        </article>
+        <nav class="pagination">
+          <ul>
+            <mt:EntryPrevious><li class="older"><a rel="prev" href="<$mt:EntryPermalink$>"><__trans phrase="Previous Entry"></a></li></mt:EntryPrevious>
+            <mt:EntryNext><li class="newer"><a rel="next" href="<$mt:EntryPermalink$>"><__trans phrase="Next Entry"></a></li></mt:EntryNext>
+          </ul>
+        </nav>
+      </div>
+      <div class="widgets related" role="complementary">
+        <$mt:WidgetSet name="<__trans phrase="Related Content">"$>
+      </div>
+    </div>
+    <aside class="social-buttons">
+      <$mt:Include module="<__trans phrase="Social Button">" url="" title=""$>
+    </aside>
+    <footer class="page-footer" role="contentinfo">
+      <div class="inner">
+        <div class="widgets">
+          <$mt:WidgetSet name="<__trans phrase="Footer Content 01">"$>
+        </div>
+        <div class="widgets">
+          <$mt:WidgetSet name="<__trans phrase="Footer Content 02">"$>
+        </div>
+      </div>
+      <$mt:Include module="<__trans phrase="Banner Footer">"$>
+    </footer>
+    <$mt:Include module="<__trans phrase="JavaScript Footer">"$>
+    <$mt:Include module="Google Analytics"$>
+  </body>
+</html>

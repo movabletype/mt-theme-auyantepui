@@ -1,0 +1,19 @@
+<mt:Authors display_name="$this_author">
+  <mt:unless name="hide_userpic">
+<$mt:Include module="<__trans phrase="Userpic">" userpic_type="profile" userpic_size="136"$>
+  </mt:unless>
+<p class="name"><a href="<$mt:ArchiveLink type="Author" encode_html="1"$>"><$mt:AuthorDisplayName$></a></p>
+<p class="bio"><$mt:CFAuthorProfileText$></p>
+<ul>
+  <li><a href="<$mt:ArchiveLink type="Author" encode_html="1"$>" class="icon archives"><__trans phrase="Archives"></a></li>
+  <mt:If tag="AuthorURL">
+  <li><a href="<$mt:AuthorURL encode_html="1"$>" class="icon website"><__trans phrase="Website"></a></li>
+  </mt:If>
+  <mt:If tag="CFAuthorTwitterAccount">
+  <li><a href="http://twitter.com/<$mt:CFAuthorTwitterAccount$>" class="icon twitter">Twitter</a></li>
+  </mt:If>
+  <mt:If tag="CFAuthorFacebookAccount">
+  <li><a href="http://facebook.com/<$mt:CFAuthorFacebookAccount$>" class="icon facebook">Facebook</a></li>
+  </mt:If>
+</ul>
+</mt:Authors>

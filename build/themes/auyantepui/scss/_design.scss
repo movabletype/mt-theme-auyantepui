@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+  line-height: $ratio;
+  background: rgb(243, 243, 243);
+  color: rgb(43, 43, 43);
+}
+
+a {
+  color: rgb(139, 152, 65);
+
+  &:hover {
+    color: rgb(110, 121, 85);
+  }
+}
+
+// Header
+[role="banner"] {
+  text-align: center;
+
+  h1 {
+    font-size: ($indent * 2);
+
+    a {
+      color: rgb(43, 43, 43);
+      text-decoration: none;
+    }
+  }
+}
+
+// Navigation
+[role=navigation] {
+  background: rgb(51, 54, 49);
+  border-width: 1px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+  li {
+
+    mark {
+      background: transparent;
+      color: rgb(255, 255, 255);
+    }
+
+    a {
+      color: rgb(220, 221, 221);
+    }
+  }
+}
+
+// Entry
+.entry {
+
+  > h2 {
+    font-size: ($indent * 1.2);
+    font-weight: normal;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+// Pagination
+.pagination {
+
+  li {
+
+    [rel=prev]:before {
+      content: "\00AB\00a0";
+    }
+
+    [rel=next]:after {
+      content: "\00a0\00BB";
+    }
+  }
+
+  .newer {
+    float: right;
+    text-align: right;
+  }
+}
+
+// Userpic
+.userpic {
+  border: 5px solid rgb(255, 255, 255);
+  @include border-radius(50%);
+  @extend %border-box;
+
+  img {
+    margin: 0;
+    overflow: hidden;
+    @include border-radius(50%);
+  }
+}
+
+// Social Button
+.social-buttons {
+  background-color: rgba(192, 198, 201, 0.25);
+
+  .fb-like {
+    span {
+      top: -1px;
+    }
+  }
+}
+
+// Profile
+.profile {
+  background-color: rgba(192, 198, 201, 0.5);
+  font-size: 90%;
+  @include border-radius(5px);
+
+
+  .name {
+    font-size: $indent;
+    @extend %nowrap-text;
+
+    a {
+      color: rgb(56, 61, 67);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Members Widget
+#members {
+  li {
+    background-color: rgba(192, 198, 201, 0.25);
+    @include border-radius();
+
+    a {
+      text-decoration: none;
+      @include border-radius();
+
+      &:hover {
+        background-color: rgb(139, 152, 65);
+        color: rgb(251, 250, 245);
+      }
+    }
+
+    .name {
+      @extend %nowrap-text;
+    }
+  }
+}
+
+// Footer
+[role=contentinfo] {
+  border-top: 1px solid rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+
+  h3 {
+    margin: 1em 0;
+  }
+
+  ul {
+    margin-left: $indent;
+  }
+
+  a {
+    color: rgb(220, 221, 221);
+  }
+}
+

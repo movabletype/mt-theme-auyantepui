@@ -1,0 +1,91 @@
+// mixin
+@mixin clearfix {
+  zoom: 1;
+
+  &:before,
+  &:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "\0020";
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin border-radius($params:6px) {
+  @each $vendor in null {
+    #{$vendor}border-radius: $params;
+  }
+}
+
+@mixin box-sizing($model) {
+  @each $vendor in -moz-, -webkit-, null {
+    #{$vendor}box-sizing: $model;
+  }
+}
+
+@mixin box-shadow($params, $inset_params:null) {
+  @each $vendor in null {
+    #{$vendor}box-shadow: $params, $inset_params;
+  }
+}
+
+@mixin opacity($degree) {
+  $degree_num: ($degree * 100);
+  opacity: $degree;
+  -ms-filter: 'alpha(opacity = #{$degree_num})';
+  filter: alpha(opacity = $degree_num);
+}
+
+@mixin linear-gradient($start, $last) {
+  background-color: $start;
+  @each $vendor in -ms-, -moz-, -webkit-, null {
+    background-image: #{$vendor}linear-gradient($start, $last);
+  }
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$start}', endColorstr='#{$last}',GradientType=0 );
+}
+
+
+// Extend
+%clearfix {
+  @include clearfix;
+}
+
+%border-box {
+  @include box-sizing(border-box);
+}
+
+%nowrap-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+%button {
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+  padding: 0.6em 1.62em;
+  border: 1px solid;
+  line-height: 1;
+  background-color: rgb(139, 152, 65);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  @include border-radius();
+  @inclide box-sizing(border-box);
+
+  &:hover {
+    background-color: rgb(110, 121, 85);
+    color: rgb(255, 255, 255);
+  }
+
+  &:active {
+    position: relative;
+    top: 2px;
+  }
+}

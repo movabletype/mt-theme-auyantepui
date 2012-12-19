@@ -1,0 +1,17 @@
+<article id="entry-<$mt:EntryID$>" class="entry hentry">
+  <h2><a href="<$mt:EntryPermalink encode_html="1"$>"><$mt:EntryTitle$></a></h2>
+  <footer>
+    <p>Posted by <mt:unless name="hide_userpic"><$mt:Include module="<__trans phrase="Userpic">" userpic_size="136"$></mt:unless><$mt:EntryAuthorDisplayName$> on <time datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate format="%x %X"$></time><mt:IfArchiveTypeEnabled archive_type="Category"><mt:If tag="EntryCategories"> in <mt:EntryCategories glue=", "><a href="<$mt:CategoryArchiveLink$>" rel="tag"><$mt:CategoryLabel$></a></mt:EntryCategories></mt:If></mt:IfArchiveTypeEnabled></p>
+  </footer>
+  <aside class="social-buttons">
+    <$mt:Include module="<__trans phrase="Social Button">"$>
+  </aside>
+  <div class="entry-content">
+    <$mt:EntryBody$>
+  </div>
+<mt:If tag="EntryMore">
+  <nav class="readmore">
+    <a href="<$mt:EntryPermalink encode_html="1"$>" class="button"><__trans phrase="Continue Reading"></a>
+  </nav>
+</mt:If>
+</article>

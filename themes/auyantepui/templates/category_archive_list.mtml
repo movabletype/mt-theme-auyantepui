@@ -1,0 +1,22 @@
+<mt:If tag="BlogCategoryCount">
+<nav class="widget">
+  <h3><__trans phrase="Category Archives"></h3>
+  <mt:TopLevelCategories>
+    <mt:SubCatIsFirst>
+  <ul class="nav-list">
+    </mt:SubCatIsFirst>
+    <mt:If tag="CategoryCount">
+    <li class="nav-item">
+      <a href="<$mt:CategoryArchiveLink$>"<mt:If tag="CategoryDescription"> title="<$mt:CategoryDescription remove_html="1" encode_html="1"$>"</mt:If> class="label category-label"><$mt:CategoryLabel$></a>
+    <mt:Else>
+    <li class="nav-item">
+      <span class="label category-label"><$mt:CategoryLabel$></span>
+    </mt:If>
+    <$mt:SubCatsRecurse$>
+    </li>
+    <mt:SubCatIsLast>
+  </ul>
+    </mt:SubCatIsLast>
+  </mt:TopLevelCategories>
+</nav>
+</mt:If>

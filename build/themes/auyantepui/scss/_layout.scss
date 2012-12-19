@@ -1,0 +1,411 @@
+$narrow: $colspan07;
+$middle: $colspan11;
+$wide: $colspan14;
+
+.colspan01 { width: $colspan01; }
+.colspan02 { width: $colspan02; }
+.colspan03 { width: $colspan03; }
+.colspan04 { width: $colspan04; }
+.colspan05 { width: $colspan05; }
+.colspan06 { width: $colspan06; }
+.colspan07 { width: $colspan07; }
+.colspan08 { width: $colspan08; }
+.colspan09 { width: $colspan09; }
+.colspan10 { width: $colspan10; }
+.colspan11 { width: $colspan11; }
+.colspan12 { width: $colspan12; }
+.colspan13 { width: $colspan13; }
+.colspan14 { width: $colspan14; }
+.colspan15 { width: $colspan15; }
+.colspan16 { width: $colspan16; }
+
+// Header
+[role="banner"] {
+  max-width: ($gap + $colspan14 + $gap);
+  margin: ($indent * 5) auto ($indent * 3);
+
+  h1 {
+    margin: 0;
+  }
+
+  [role="navigation"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+
+    ul {
+      margin: 3px $harf-indent 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline-block;
+      padding: 0 $harf-indent;
+    }
+
+    .widget-search {
+        display: none;
+    }
+
+    @media (min-width: $middle) {
+      ul {
+        float: left;
+      }
+
+      .widget-search {
+        display: block;
+        float: right;
+        margin: 0  $harf-indent 0 0;
+      }
+    }
+
+    @media (min-width: $wide) {
+      position: fixed;
+      z-index: 10;
+    }
+  }
+}
+
+.content {
+  max-width: ($gap + $colspan14 + $gap);
+  margin: 0 1em;
+  @extend %clearfix;
+
+  @media (min-width: $wide) {
+    margin: 0 auto;
+  }
+}
+
+// Main
+[role="main"] {
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: $wide) {
+    float: left;
+    width: (($colspan14) - ($gap + $colspan03 + $gap));
+  }
+}
+
+// Entry
+.entry {
+  margin-bottom: ($indent * 4);
+  @extend %clearfix;
+
+  > h2 {
+    margin: 0;
+
+    + footer {
+      margin: 0 0 $harf-indent;
+
+      p {
+        margin: 0;
+      }
+
+      .userpic {
+        display: none;
+      }
+    }
+  }
+
+  .social-buttons {
+    display: none;
+  }
+
+  .profile {
+    margin-top: ($indent * 4);
+  }
+
+  @media (min-width: $middle) {
+    position: relative;
+    padding-left: ($colspan02 - $gut);
+
+    h2 {
+
+      + footer {
+
+        .userpic {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: ($colspan01 + $gut);
+          height: ($colspan01 + $gut);
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .social-buttons {
+      display: block;
+      margin: 0 0 0.62em;
+
+      ul {
+        margin: 0;
+      }
+    }
+
+    .profile {
+      margin-left: -($colspan02 - $gut);
+    }
+  }
+}
+
+// Entry Content
+.entry-content {
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: $indent 0 0;
+  }
+
+  figure img {
+    margin: $harf-indent 0;
+  }
+
+  iframe {
+    max-width: 100%;
+    margin: $indent 0 0;
+  }
+}
+
+.zenback {
+  margin: ($indent * 2) 0 $indent;
+}
+
+.related {
+  width: 100%;
+
+  @media (min-width: $wide) {
+    float: right;
+    width: ($gap + $colspan03);
+  }
+}
+
+// Profile
+.profile {
+  position: relative;
+  margin: 0 0 ($indent * 3);
+  padding: $indent;
+
+  h2 {
+    margin: 0;
+  }
+
+  .userpic {
+    position: static;
+    float: left;
+    width: ($colspan01 + $gut);
+    height: ($colspan01 + $gut);
+    margin: $harf-indent;
+    margin-top: -$harf-indent;
+    margin-left: -$harf-indent;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .name {
+    margin: 0.2em 0 0;
+  }
+
+  .bio {
+    clear: both;
+  }
+
+  ul {
+    clear: both;
+    margin-bottom: 0;
+    padding: 0;
+
+    @media (min-width: $wide) {
+      position: absolute;
+      top: 0;
+      right: $indent;
+    }
+  }
+
+  li {
+    display: inline-block;
+  }
+}
+
+// Pagination
+.pagination {
+  margin: ($indent * 2) 0;
+  @extend %clearfix;
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    float: left;
+    width: 50%;
+  }
+
+  @media(min-width: $wide) {
+    padding-left: ($colspan02 - $gut);
+  }
+}
+
+// Widget
+.widget {
+  margin-bottom: ($indent * 2);
+
+  ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: disc;
+  }
+}
+
+// Members
+#members {
+  @extend %clearfix;
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    margin: 0 0 $harf-indent 0;
+    list-style-type: none;
+    @extend %clearfix;
+  }
+
+  a {
+    display: block;
+  }
+
+  .userpic {
+    float: left;
+    width: $colspan01;
+    height: $colspan01;
+    margin: $harf-indent;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .name {
+    display: block;
+    height: 67px;
+    margin-right: $harf-indent;
+    line-height: 67px;
+  }
+}
+
+// Search
+#search {
+  text-align: center;
+
+  div {
+    display: inline-block;
+    position: relative;
+  }
+
+  input[type="text"] {
+    width: ($indent * 10);
+    height: ($indent * 1.3);
+    padding: 0 ($indent * 1.3) 0 0.5em;
+    border: 1px solid $gray;
+    line-height: 1.3;
+    box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: table-cell;
+    width: ($indent * 1.3);
+    height: ($indent * 1.3);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    img {
+    vertical-align: middle;
+    }
+  }
+}
+
+
+// Social Buttons
+.social-buttons {
+
+  ul {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1px 10px;
+    @extend %clearfix;
+  }
+
+  li {
+    float: left;
+    height: 20px;
+    line-height: 18px;
+    list-style-type: none;
+    margin: $harf-indent 0.3em;
+
+    a {
+      display: inline-block;
+      height: 20px;
+      line-height: 28px;
+    }
+  }
+}
+
+// Footer
+[role=contentinfo] {
+  padding: $indent 0;
+
+  .inner {
+    margin: 0 auto;
+    padding: 0;
+    max-width: ($gap + $colspan14 + $gap);
+    @extend %clearfix;
+  }
+
+  .widgets {
+
+    @media (min-width: $middle) {
+      float: left;
+      width: 50%;
+    }
+
+    .widget {
+      padding: 0 $gap;
+    }
+  }
+}
+
+#copyright,
+.poweredby {
+  margin-bottom: 0;
+  text-align: center;
+}

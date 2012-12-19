@@ -1,0 +1,165 @@
+label: 'Auyantepui'
+id: 'auyantepui'
+version: 0.1
+author_link: 'http://www.sixapart.jp/'
+author_name: 'Six Apart, Ltd'
+class: 'blog'
+description: 'Movable Type Theme for Six Apart Blog.'
+protected: 1
+l10n_lexicon:
+  en_us: 'l10n_en_us.yaml'
+  ja: 'l10n_ja.yaml'
+thumbnail_file: 'thumb.png'
+thumbnail_file_medium: 'thumb-medium.png'
+thumbnail_file_small: 'thumb-small.png'
+elements:
+  custom_fields:
+    component: commercial
+    importer: custom_fields
+    data:
+      cf_entry_thumbnail:
+        default: 1
+        description: 'Entry Thumbnail'
+        name: 'Entry Thumbnail'
+        obj_type: 'entry'
+        required: 1
+        tag: 'CFEntryTumbnail'
+        type: 'image'
+  default_pages:
+    importer: 'default_pages'
+    name: 'Default Pages'
+    component: 'core'
+    data:
+      about:
+        title: '<__trans phrase="About this blog">'
+        text: '<p>About</p>'
+        tags: '@ABOUT_PAGE'
+        folder: 'about'
+        status: 1
+  template_set:
+    component: 'core'
+    importer: 'template_set'
+    data:
+      base_path: 'templates'
+      require: 1
+      templates:
+        index:
+          feed_recent:
+            label: 'Feed - Recent Entries'
+            outfile: 'atom.xml'
+            rebuild_me: 1
+          main_index:
+            label: 'Main Index'
+            outfile: 'index.html'
+            rebuild_me: 1
+          rsd:
+            label: 'RSD'
+            outfile: 'rsd.xml'
+            rebuild_me: 1
+          sitemap:
+            label: 'Sitemap'
+            outfile: 'sitemap.xml'
+          styles:
+            label: 'Stylesheet'
+            outfile: 'styles.css'
+            rebuild_me: 1
+          styles_ie:
+            label: 'Stylesheet for IE'
+            outfile: 'ie.css'
+            rebuild_me: 1
+        individual:
+          entry:
+            label: 'Entry'
+            mappings:
+              individual:
+                archive_type: 'Individual'
+                preferred: 1
+        page:
+          page:
+            label: 'Page'
+            mappings:
+              page:
+                archive_type: 'Page'
+                preferred: 1
+        archive:
+          entry_listing:
+            label: 'Entry Listing'
+            mappings:
+              category:
+                archive_type: 'Category'
+              monthly:
+                archive_type: 'Monthly'
+                file_template: '%y-%m/%i'
+              author:
+                archive_type: 'Author'
+                file_template: '%-a/%i'
+        module:
+          author_profile:
+            label: 'Author Profile'
+          banner_footer:
+            label: 'Banner Footer'
+          banner_header:
+            label: 'Banner Header'
+          entry_summary:
+            label: 'Entry Summary'
+          fb_app_id:
+            label: 'Facebook App ID'
+          google_analytics:
+            label: 'Google Analytics'
+          javascript_footer:
+            label: 'JavaScript Footer'
+          html_head:
+            label: 'HTML Head'
+          navigation:
+            label: 'Navigation'
+          pagination:
+            label: 'Pagination'
+          userpic:
+            label: 'Userpic'
+          zenback:
+            label: 'Zenback'
+          social_button:
+            label: 'Social Button'
+        system:
+          dynamic_error:
+            description_label: 'Displays errors for dynamically published templates.'
+            label: 'Dynamic Error'
+          popup_image:
+            description_label: 'Displays image when user clicks a popup-linked image.'
+            label: 'Popup Image'
+          search_results:
+            description_label: 'Displays results of a search.'
+            label: 'Search Results'
+        widget:
+          blog_members:
+            label: 'Blog Members'
+          category_archive_list:
+            label: 'Category Archives'
+          monthly_archive_list:
+            label: 'Monthly Archives'
+          monthly_archive_dropdown:
+            label: 'Monthly Archives (Dropdown)'
+          search:
+            label: 'Search'
+          sample_widget_01:
+            label: 'Sample Widget 01'
+          sample_widget_02:
+            label: 'Sample Widget 02'
+        widgetset:
+          related_content:
+            label: 'Related Content'
+            order: 10
+            widgets:
+              - Blog Members
+          footer_content_01:
+            label: 'Footer Content 01'
+            order: 20
+            widgets:
+              - Sample Widget 01
+              - Sample Widget 02
+          footer_content_02:
+            label: 'Footer Content 02'
+            order: 30
+            widgets:
+              - Monthly Archives (Dropdown)
+              - Category Archives
