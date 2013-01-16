@@ -1,19 +1,19 @@
 <ul>
   <li>
-    <a href="https://twitter.com/share" class="twitter-share-button" data-url="<mt:if name="url"><$mt:var name="url" encode_html="1"$><mt:Else><$mt:EntryPermalink encode_html="1"$></mt:if>" data-text="<mt:if name="title"><$mt:var name="title" encode_html="1"$><mt:Else><$mt:EntryTitle encode_html="1"$></mt:if>" data-via="sixapartkk" data-lang="ja">ツイート</a>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="<mt:if name="url"><$mt:var name="url" encode_html="1"$><mt:ElseIf tag="EntryPermalink"><$mt:EntryPermalink encode_html="1"$><mt:Elseif name="archive_template"><mt:ArchiveLink encode_html="1"><mt:Else><mt:BlogURL encode_html="1"></mt:if>" data-text="<mt:if name="title"><$mt:var name="title" encode_html="1"$><mt:ElseIf tag="EntryTitle"><$mt:EntryTitle encode_html="1"$><mt:Elseif name="archive_template"><mt:ArchiveTitle><mt:Else><mt:BlogName encode_html="1"></mt:if>" data-via="sixapartkk" data-lang="ja">ツイート</a>
   </li>
   <li>
-    <a href="http://b.hatena.ne.jp/entry/<mt:if name="url"><$mt:var name="url" encode_html="1"$><mt:Else><$mt:EntryPermalink encode_html="1"$></mt:if>" class="hatena-bookmark-button" data-hatena-bookmark-title="<mt:if name="title"><$mt:var name="title" encode_html="1"$><mt:Else><$mt:EntryTitle encode_html="1"$></mt:if>" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"></a>
+  <a href="http://b.hatena.ne.jp/entry/<mt:if name="url"><$mt:var name="url" encode_html="1"$><mt:ElseIf tag="EntryPermalink"><$mt:EntryPermalink encode_html="1"$><mt:Elseif name="archive_template"><mt:ArchiveLink><mt:Else><mt:BlogURL encode_html="1"></mt:if>" class="hatena-bookmark-button" data-hatena-bookmark-title="<mt:if name="title"><$mt:var name="title" encode_html="1"$><mt:ElseIf tag="EntryTitle"><$mt:EntryTitle encode_html="1"$><mt:Elseif name="archive_template"><mt:ArchiveTitle><mt:Else><mt:BlogName encode_html="1"></mt:if>" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"></a>
   </li>
   <li>
-    <a href="#" onclick="Evernote.doClip({providerName:'<mt:if name="title"><$mt:var name="title" encode_js="1"$><mt:Else><$mt:EntryTitle encode_js="1"$></mt:if>'}); return false;">
+  <a href="#" onclick="Evernote.doClip({providerName:'<mt:if name="title"><$mt:var name="title" encode_js="1"$><mt:ElseIf Tag="EntryTitle"><$mt:EntryTitle encode_js="1"$><mt:Elseif name="archive_template"><mt:ArchiveTitle encode_js="1"><mt:Else><mt:BlogName encode_html="1"></mt:if>'}); return false;">
       <img src="http://static.evernote.com/article-clipper.png" alt="Clip to Evernote">
     </a>
   </li>
   <li>
-    <div class="g-plusone" data-size="medium" data-href="<mt:if name="url"><$mt:var name="url" encode_html="1"$><mt:Else><$mt:EntryPermalink encode_html="1"$></mt:if>"></div>
+  <div class="g-plusone" data-size="medium" data-href="<mt:if name="url"><$mt:var name="url" encode_html="1"$><mt:ElseIf tag="EntryPermalink"><$mt:EntryPermalink encode_html="1"$><mt:Elseif name="archive_template"><mt:ArchiveLink encode_html="1"><mt:Else><mt:BlogURL encode_html="1"></mt:if>"></div>
   </li>
   <li>
-    <div class="fb-like" data-href="<mt:if name="url"><$mt:var name="url" encode_html="1"$><mt:Else><$mt:EntryPermalink encode_html="1"$></mt:if>" data-send="false" data-layout="button_count" data-width="130" data-show-faces="false" data-font="lucida grande"></div>
+  <div class="fb-like" data-href="<mt:if name="url"><$mt:var name="url" encode_html="1"$><mt:ElseIf tag="EntryPermalink"><$mt:EntryPermalink encode_html="1"$><mt:Elseif name="archive_template"><mt:ArchiveLink encode_html="1"><mt:Else><mt:BlogURL encode_html="1"></mt:if>" data-send="false" data-layout="button_count" data-width="130" data-show-faces="false" data-font="lucida grande"></div>
   </li>
 </ul>
