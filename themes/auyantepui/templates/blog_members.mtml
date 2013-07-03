@@ -7,7 +7,7 @@
   </mt:If>
       <li>
   <mt:if tag="AuthorEntryCount">
-        <a href="<$mt:ArchiveLink type="Author" encode_html="1"$>">
+        <mt:Archives type="Author"><a href="<$mt:ArchiveLink type="Author" encode_html="1"$>"></mt:Archives>
           <$mt:Include module="<__trans phrase="Userpic">" userpic_type="profile" userpic_size="100"$>
           <span class="name"><$mt:AuthorDisplayName$></span>
         </a>
