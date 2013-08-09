@@ -20,7 +20,7 @@ This theme requires:
 ## Customization
 Please see the following wiki page.
 
-* [Japanese document](mt-theme-auyantepui/wiki/インストール-＆-カスタマイズ)
+* [Japanese document](wiki/インストール-＆-カスタマイズ)
 
 ## License
 This Movable Type theme is under a dual license.<br/><br/>
