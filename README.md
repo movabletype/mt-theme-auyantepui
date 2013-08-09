@@ -14,7 +14,7 @@ This theme requires:
 
 1. Unpack the mt-theme-auyantepui archive.
 2. Upload and copy the mt-theme-auyantepui/themes/auyantepui folder to your MT's themes folder. ( /path/to/mt/themes )
-3. Sign into the your MT and create a new Custom Fields on the system. Detail is [here (ja)](mt-theme-auyantepui/wiki/インストール-＆-カスタマイズ)
+3. Sign into the your MT and create a new Custom Fields on the system. Detail is [here (ja)](wiki/インストール-＆-カスタマイズ)
 4. Create a new blog with "Auyantepui" theme.
 
 ## Customization
