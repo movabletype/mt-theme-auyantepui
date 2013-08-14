@@ -21,6 +21,7 @@ This theme requires:
 Please see the following wiki page.
 
 * [Japanese document](https://github.com/movabletype/mt-theme-auyantepui/wiki/インストール-＆-カスタマイズ)
+* [English document](https://github.com/movabletype/mt-theme-auyantepui/wiki/Installation-%26-customization)
 
 ## License
 This Movable Type theme is under a dual license.<br/><br/>
