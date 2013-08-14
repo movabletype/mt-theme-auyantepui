@@ -35,7 +35,7 @@ This Movable Type theme is under a dual license.<br/><br/>
 ## Copyright
 The following copyright notice applies to all the files provided in this distribution, including binary files, unless explicitly noted otherwise.
 
-Copyright 2011-2012 Six Apart, Ltd.
+Copyright 2011 Six Apart, Ltd.
 
 ## Support
 Auyantepui is not an official Six Apart release. As such, support for this
