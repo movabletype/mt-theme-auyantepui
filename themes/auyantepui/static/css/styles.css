@@ -23,7 +23,28 @@ button,
   overflow: hidden;
   text-overflow: ellipsis; }
 
-/* normalize.css 2012-03-11T12:53 UTC - http://github.com/necolas/normalize.css */
+.entry .readmore .button {
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+  padding: 0.6em 1.62em;
+  border: 1px solid;
+  line-height: 1;
+  background-color: #8b9841;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  border-radius: 6px;
+  @inclide box-sizing(border-box); }
+  .entry .readmore .button:hover {
+    background-color: #6e7955;
+    color: white; }
+  .entry .readmore .button:active {
+    position: relative;
+    top: 2px; }
+
+/*! normalize.css 2012-03-11T12:53 UTC - http://github.com/necolas/normalize.css */
 /* =============================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -642,7 +663,9 @@ textarea {
   .entry > h2 {
     margin: 0; }
     .entry > h2 + footer {
-      margin: 0 0 0.809em; }
+      margin: 0 0 0.809em;
+      color: #9ea1a3;
+      text-shadow: 0 1px 1px #fff; }
       .entry > h2 + footer p {
         margin: 0; }
       .entry > h2 + footer .userpic {
@@ -875,7 +898,9 @@ a {
 
 .userpic {
   border: 5px solid white;
-  border-radius: 50%; }
+  border-radius: 50%;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box; }
   .userpic img {
     margin: 0;
     overflow: hidden;
